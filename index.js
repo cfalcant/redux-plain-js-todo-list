@@ -21,6 +21,7 @@ function reducer(state, action) {
   }
 }
 
+// 4. Access the input value when the submit button is clicked
 let submitButton = document.querySelector('#submit-button').addEventListener('click', () => {
   let todoValue = document.querySelector('#new-todo').value
   store.dispatch(addTodo(todoValue))
@@ -28,6 +29,7 @@ let submitButton = document.querySelector('#submit-button').addEventListener('cl
 
 store.subscribe(() => generateTodoHTML(store.getState()))
 
+// 5. Generate the todo list
 function generateTodoHTML(arrOfTodos) {
   let todoList = document.querySelector('#todo-list')
   let newList = document.createElement('ul')
